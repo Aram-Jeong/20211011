@@ -9,7 +9,7 @@ import co.micol.prj.board.service.BoardVO;
 
 public class BoardMybatisService implements BoardService {
 	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
-	private BoardMapper map = new sqlSession.getMapper(BoardMapper.class);
+	private BoardMapper map = sqlSession.getMapper(BoardMapper.class);
 	
 	@Override
 	public List<BoardVO> boardSelectList() {
